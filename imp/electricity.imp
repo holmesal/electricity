@@ -1,0 +1,11 @@
+// http://www.reuk.co.uk/Flashing-LED-on-Electricity-Meter.htm
+
+imp.enableblinkup(true);
+
+function gotBlink() {
+    agent.send("blink",time());
+
+    imp.wakeup(3.0, gotBlink)
+}
+
+gotBlink()
